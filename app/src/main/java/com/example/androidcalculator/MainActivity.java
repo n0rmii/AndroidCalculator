@@ -125,7 +125,14 @@ public class MainActivity extends AppCompatActivity {
 							result = num2 / num1;
 							break;
 						case 'r':
-							result = Math.pow(num1, 1/num2);
+							double control1 = Math.pow(num2, 1/num1);
+							double control2 = Math.pow(Math.round(control1), num1);
+							if(control2 == num1){
+								result = control1;
+							}
+							else{
+								result = Math.round(control1);
+							}
 							break;
 						default:
 							Toast.makeText(MainActivity.this, "Incorrect operation: " + oper, Toast.LENGTH_LONG).show();
